@@ -14,30 +14,15 @@ export const MainView = () => {
     const [selectedMovie, setSelectedMovie] = useState(null);
 
     useEffect(() => {
-        if (!token) return;
-        fetch("https://my-flix-app-66e818e7b7de.herokuapp.com/movies", {
-            headers: { Authorization: 'Bearer ${token' },
-        })
-            .then((response) => response.json())
-            .then((movies) => {
-                setMovies(movies);
-            });
-    }, [token]);
-
-    useEffect(() => {
+        if (!token) {
+            return;
+        }
         fetch("https://my-flix-app-66e818e7b7de.herokuapp.com/movies", {
             headers: { Authorization: 'Bearer ${token}' }
         })
             .then((response) => response.json())
             .then((data) => {
-                console.log(data);
-            });
-    }, [token]);
 
-    useEffect(() => {
-        fetch("https://my-flix-app-66e818e7b7de.herokuapp.com/movies")
-            .then((response) => response.json())
-            .then((data) => {
                 const moviesFromApi = data.map((movies) => {
                     return {
                         _id: movies._id,
@@ -50,7 +35,7 @@ export const MainView = () => {
                 });
                 setMovie(moviesFromApi);
             });
-    }, []);
+    }, [token]);
 
     if (!user) {
         return (
