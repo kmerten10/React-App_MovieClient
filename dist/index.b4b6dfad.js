@@ -27183,10 +27183,10 @@ const MainView = ()=>{
                     _id: movies._id,
                     Title: movies.Title,
                     Director: {
-                        Name: movies.Director.Name
+                        Name: movies.Director[0].Name
                     },
                     Genre: {
-                        Name: movies.Genre.Name
+                        Name: movies.Genre[0].Name
                     },
                     Description: movies.Description
                 };
@@ -28239,7 +28239,7 @@ const MovieView = ({ movie, onBackClick })=>{
                         columnNumber: 17
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                        children: movie.Director
+                        children: movie.Director.Name
                     }, void 0, false, {
                         fileName: "src/components/movie-view/movie-view.jsx",
                         lineNumber: 10,
