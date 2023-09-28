@@ -27177,7 +27177,7 @@ const MainView = ()=>{
     const [movie, setMovie] = (0, _react.useState)([]);
     const [selectedMovie, setSelectedMovie] = (0, _react.useState)(null);
     (0, _react.useEffect)(()=>{
-        fetch("https://my-flix-app-66e818e7b7de.herokuapp.com/").then((response)=>response.json()).then((data)=>{
+        fetch("https://my-flix-app-66e818e7b7de.herokuapp.com/movies").then((response)=>response.json()).then((data)=>{
             const moviesFromApi = data.map((movies)=>{
                 return {
                     _id: movies._id,
