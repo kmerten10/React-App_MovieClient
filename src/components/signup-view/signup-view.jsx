@@ -14,10 +14,10 @@ export const SignupView = () => {
             Username: username,
             Password: password,
             Email: email,
-            Birthday: Birthday
+            Birthday: birthday
         }
 
-        fetch("SIGNUP_URL", {
+        fetch("https://my-flix-app-66e818e7b7de.herokuapp.com/users", {
             method: "POST",
             body: JSON.stringify(data),
             headers: {
