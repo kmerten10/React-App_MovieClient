@@ -27185,7 +27185,7 @@ const MainView = ()=>{
     const [selectedMovie, setSelectedMovie] = (0, _react.useState)(null);
     (0, _react.useEffect)(()=>{
         if (!token) return;
-        fetch("https://my-flix-app-66e818e7b7de.herokuapp.com/login", {
+        fetch("https://my-flix-app-66e818e7b7de.herokuapp.com/movies", {
             headers: {
                 Authorization: "Bearer ${token"
             }
@@ -27196,7 +27196,7 @@ const MainView = ()=>{
         token
     ]);
     (0, _react.useEffect)(()=>{
-        fetch("https://my-flix-app-66e818e7b7de.herokuapp.com/login", {
+        fetch("https://my-flix-app-66e818e7b7de.herokuapp.com/movies", {
             headers: {
                 Authorization: "Bearer ${token}"
             }
