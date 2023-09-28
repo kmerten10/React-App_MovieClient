@@ -1,12 +1,25 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { MovieCard } from "./movie-card";
 import { MovieView } from "../movie-view/movie-view";
 
 export const MainView = () => {
     const [movie, setMovie] = useState([]);
 
-
     const [selectedMovie, setSelectedMovie] = useState(null);
+
+    useEffect(() => {
+        fetch("api")
+            .then((response) => response.json())
+            .then((data) => {
+                return {
+                    id: doc.key,
+                    title: doc.title,
+                    image: "https",
+                    author: doc.director_name?.[0]
+                };
+            });
+        setMovies(moviesFromApi)
+    }, []);
 
     if (selectedMovie) {
         return (
