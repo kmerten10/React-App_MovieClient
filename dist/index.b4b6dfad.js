@@ -27300,7 +27300,7 @@ $RefreshReg$(_c, "MainView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./movie-card":"q51ck","../movie-view/movie-view":"ggaUx","../login-view/login-view":"9YtA0","@parcel/transformer-js/src/esmodule-helpers.js":"6HleG","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"1SeYV","passport":"4d27x","../signup-view/signup-view":"4OGiN"}],"q51ck":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./movie-card":"q51ck","../movie-view/movie-view":"ggaUx","@parcel/transformer-js/src/esmodule-helpers.js":"6HleG","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"1SeYV","../login-view/login-view":"9YtA0","passport":"4d27x","../signup-view/signup-view":"4OGiN"}],"q51ck":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$c38a = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
