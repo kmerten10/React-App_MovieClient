@@ -2962,7 +2962,7 @@ const root = (0, _client.createRoot)(container);
 //Tells React to render your app in the root DOM element
 root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(MyFlixApplication, {}, void 0, false, {
     fileName: "src/index.jsx",
-    lineNumber: 20,
+    lineNumber: 21,
     columnNumber: 13
 }, undefined));
 var _c;
@@ -27185,7 +27185,7 @@ const MainView = ()=>{
     const [selectedMovie, setSelectedMovie] = (0, _react.useState)(null);
     (0, _react.useEffect)(()=>{
         if (!token) return;
-        fetch("https://my-flix-app-66e818e7b7de.herokuapp.com/users", {
+        fetch("https://my-flix-app-66e818e7b7de.herokuapp.com/login", {
             headers: {
                 Authorization: "Bearer ${token"
             }
@@ -27196,7 +27196,7 @@ const MainView = ()=>{
         token
     ]);
     (0, _react.useEffect)(()=>{
-        fetch("https://my-flix-app-66e818e7b7de.herokuapp.com/users", {
+        fetch("https://my-flix-app-66e818e7b7de.herokuapp.com/login", {
             headers: {
                 Authorization: "Bearer ${token}"
             }
