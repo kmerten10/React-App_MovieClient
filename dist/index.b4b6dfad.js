@@ -41615,7 +41615,7 @@ const LoginView = ({ onLoggedIn })=>{
                         type: "text",
                         value: username,
                         onChange: (e)=>setUsername(e.target.value),
-                        minlength: "7",
+                        minLength: "7",
                         required: true
                     }, void 0, false, {
                         fileName: "src/components/login-view/login-view.jsx",
@@ -41635,7 +41635,7 @@ const LoginView = ({ onLoggedIn })=>{
                         type: "password",
                         value: password,
                         onChange: (e)=>setPassword(e.target.value),
-                        minlength: "7",
+                        minLength: "7",
                         required: true
                     }, void 0, false, {
                         fileName: "src/components/login-view/login-view.jsx",
