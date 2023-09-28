@@ -32,7 +32,7 @@ export const MainView = () => {
             .then((data) => {
                 console.log(data);
             });
-    }, { token });
+    }, [token]);
 
     useEffect(() => {
         fetch("https://my-flix-app-66e818e7b7de.herokuapp.com/movies")
