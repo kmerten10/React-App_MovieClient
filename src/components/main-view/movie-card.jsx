@@ -1,14 +1,14 @@
 import PropTypes from "prop-types";
 
-export const MovieCard = ({ movies, onClick }) => {
+export const MovieCard = ({ movie, onClick }) => {
     return (
         <div
 
             onClick={() => {
-                onClick(movies);
+                onClick(movie);
             }}
         >
-            {movies.Title}
+            {movie.Title}
         </div>
     );
 };
