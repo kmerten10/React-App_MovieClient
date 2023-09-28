@@ -19,7 +19,7 @@ export const MainView = () => {
 
         fetch("https://my-flix-app-66e818e7b7de.herokuapp.com/movies", {
             headers: {
-                Authorization: 'Bearer ${token}',
+                Authorization: `Bearer ${token}`,
                 "Content-Type": "application/json",
             },
         })
