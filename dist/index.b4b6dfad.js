@@ -27249,10 +27249,10 @@ parcelHelpers.export(exports, "MovieCard", ()=>MovieCard);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _propTypes = require("prop-types");
 var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
-const MovieCard = ({ movie, onMovieClick })=>{
+const MovieCard = ({ movie, onClick })=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         onClick: ()=>{
-            onMovieClick(movie);
+            onClick(movie);
         },
         children: movie.Title
     }, void 0, false, {
