@@ -3,14 +3,12 @@ import { Button, Card } from "react-bootstrap";
 
 export const MovieCard = ({ movie, onClick }) => {
     return (
-        <Card className="h-100">
+
+        <Card style={{ cursor: "pointer" }} className="h-100" onClick={() => onClick(movie)} variant="link">
             <Card.Img variant="top" src={movie.Image} />
             <Card.Body>
-                <Card.Title>{movie.Title}</Card.Title>
-                <Card.Text>{movie.Director.Name}</Card.Text>
-                <Button onClick={() => onClick(movie)} variant="link">
-                    Open
-                </Button>
+                <Card.Title className="text">{movie.Title}</Card.Title>
+                <Card.Text className="text">{movie.Director.Name}</Card.Text>
             </Card.Body>
         </Card>
 
