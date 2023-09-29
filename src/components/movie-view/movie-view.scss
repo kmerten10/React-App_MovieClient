@@ -1,5 +1,5 @@
 $primary: Goldenrod;
-$body-bg: rgb(19, 16, 16);
+$body-bg: rgb(231, 183, 62);
 
 @import '~bootstrap/scss/bootstrap.scss';
 
@@ -30,11 +30,14 @@ $body-bg: rgb(19, 16, 16);
 }
 
 .h-100:hover{
-  box-shadow: 0 0 10px 10px #888886;
     transition-timing-function: ease-in-out;
-    transform: scale(1.1); 
+    transform: scale(1.05); 
 }
 
 .col-md-3{
   padding: 20px;
+}
+
+.container{
+  background-color:  rgb(56, 47, 47);
 }
