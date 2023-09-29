@@ -3,7 +3,12 @@ $body-bg: rgb(231, 183, 62);
 
 @import '~bootstrap/scss/bootstrap.scss';
 
-
+body{
+  background-image: url('/src/imgs/gold.jpg');
+  min-height: 100%;
+  background-attachment: fixed;
+  background-size: cover;
+}
 .back-button {
     padding: 4px 12px 4px 12px;
     color: dimgray;
@@ -22,7 +27,7 @@ $body-bg: rgb(231, 183, 62);
 }
 
 .h-100{
-  background-color: black;
+  background-image: black;
   padding: 20px;
   padding-left: 30px;
   padding-right: 30px;
