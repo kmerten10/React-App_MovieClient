@@ -13203,6 +13203,13 @@ textarea.form-control-lg {
   }
 }
 
+body {
+  background-image: url("gold.2be42f2f.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 100%;
+}
+
 .back-button {
   color: #696969;
   background-color: #daa520;
@@ -13221,7 +13228,7 @@ img {
 }
 
 .h-100 {
-  background-color: #000;
+  background-image: black;
   padding: 20px 30px;
   transition: all .2s ease-in-out;
 }
