@@ -27335,6 +27335,8 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "MovieCard", ()=>MovieCard);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
 var _propTypes = require("prop-types");
 var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
 var _reactBootstrap = require("react-bootstrap");
@@ -27352,7 +27354,7 @@ const MovieCard = ({ movie, onClick })=>{
                 src: movie.Image
             }, void 0, false, {
                 fileName: "src/components/main-view/movie-card.jsx",
-                lineNumber: 8,
+                lineNumber: 9,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card).Body, {
@@ -27362,7 +27364,7 @@ const MovieCard = ({ movie, onClick })=>{
                         children: movie.Title
                     }, void 0, false, {
                         fileName: "src/components/main-view/movie-card.jsx",
-                        lineNumber: 10,
+                        lineNumber: 11,
                         columnNumber: 17
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card).Text, {
@@ -27370,19 +27372,19 @@ const MovieCard = ({ movie, onClick })=>{
                         children: movie.Director.Name
                     }, void 0, false, {
                         fileName: "src/components/main-view/movie-card.jsx",
-                        lineNumber: 11,
+                        lineNumber: 12,
                         columnNumber: 17
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/main-view/movie-card.jsx",
-                lineNumber: 9,
+                lineNumber: 10,
                 columnNumber: 13
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/components/main-view/movie-card.jsx",
-        lineNumber: 7,
+        lineNumber: 8,
         columnNumber: 9
     }, undefined);
 };
@@ -27404,7 +27406,7 @@ $RefreshReg$(_c, "MovieCard");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","prop-types":"7wKI2","react-bootstrap":"3AD9A","@parcel/transformer-js/src/esmodule-helpers.js":"6HleG","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"1SeYV"}],"7wKI2":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","prop-types":"7wKI2","react-bootstrap":"3AD9A","@parcel/transformer-js/src/esmodule-helpers.js":"6HleG","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"1SeYV","react":"21dqq"}],"7wKI2":[function(require,module,exports) {
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
