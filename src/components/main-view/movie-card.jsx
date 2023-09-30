@@ -7,7 +7,7 @@ export const MovieCard = ({ movie, onClick }) => {
     return (
         <Card>
             <Link to={`/movies/${encodeURIComponent(movie._id)}`}>
-                <Card.Button style={{ cursor: "pointer" }} className="h-100" onClick={() => onClick(movie)} variant="link"></Card.Button>
+                <Button style={{ cursor: "pointer" }} className="h-100" onClick={() => onClick(movie)} variant="link"></Button>
             </Link>
             <Card.Img variant="top" src={movie.Image} />
             <Card.Body>

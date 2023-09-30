@@ -28292,7 +28292,7 @@ const MainView = ()=>{
                                 columnNumber: 25
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
-                                path: "/movies/:movieId",
+                                path: "/movies/",
                                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
                                     children: !user ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Navigate), {
                                         to: "/",
@@ -28323,8 +28323,8 @@ const MainView = ()=>{
                                                         onClick: ()=>{
                                                             setSelectedMovie(movie);
                                                         }
-                                                    }, movie.id, false, void 0, void 0)
-                                                }, movie.id, false, void 0, void 0))
+                                                    }, movie._id, false, void 0, void 0)
+                                                }, movie._id, false, void 0, void 0))
                                         ]
                                     }, void 0, true)
                                 }, void 0, false)
@@ -28388,7 +28388,7 @@ const MovieCard = ({ movie, onClick })=>{
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
                 to: `/movies/${encodeURIComponent(movie._id)}`,
-                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card).Button, {
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Button), {
                     style: {
                         cursor: "pointer"
                     },

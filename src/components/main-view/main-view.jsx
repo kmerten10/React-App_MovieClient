@@ -79,7 +79,7 @@ export const MainView = () => {
                             }
                         />
                         <Route
-                            path="/movies/:movieId"
+                            path="/movies/"
                             element={
                                 <>
                                     {!user ? (
@@ -96,9 +96,9 @@ export const MainView = () => {
 
                                             <button onClick={() => { setUser(null); setToken(null); localStorage.clear(); }}>Logout</button>
                                             {movie.map((movie) => (
-                                                <Col key={movie.id} md={3}>
+                                                <Col key={movie._id} md={3}>
                                                     <MovieCard
-                                                        key={movie.id}
+                                                        key={movie._id}
                                                         movie={movie}
                                                         onClick={() => {
                                                             setSelectedMovie(movie);
