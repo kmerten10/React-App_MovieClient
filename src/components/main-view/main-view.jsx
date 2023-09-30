@@ -83,7 +83,7 @@ export const MainView = () => {
                             element={
                                 <>
                                     {!user ? (
-                                        <Navigate to="/login" replace />
+                                        <Navigate to="/" replace />
                                     ) : selectedMovie ? (
                                         <Col className="mb-5" md={8} >
                                             <MovieView movie={selectedMovie} onBackClick={() => setSelectedMovie(null)}
@@ -98,6 +98,7 @@ export const MainView = () => {
                                             {movie.map((movie) => (
                                                 <Col key={movie.id} md={3}>
                                                     <MovieCard
+                                                        key={movie.id}
                                                         movie={movie}
                                                         onClick={() => {
                                                             setSelectedMovie(movie);
