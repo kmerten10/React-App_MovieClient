@@ -41,37 +41,38 @@ export const LoginView = ({ onLoggedIn }) => {
     };
 
     return (
-        <Form onSubmit={handleSubmit}>
-            <Form.Group controlId="formUsername">
-                <Form.Label>Username:</Form.Label>
-                <Form.Control
-                    type="text"
-                    value={username}
-                    onChange={(e) => setUsername(e.target.value)}
-                    minLength="7"
-                    required
-                />
-            </Form.Group>
+        <>
+            <h1>Login Here</h1>
+            <Form onSubmit={handleSubmit}>
+                <Form.Group controlId="formUsername">
+                    <Form.Label >Username:</Form.Label>
+                    <Form.Control
+                        type="text"
+                        value={username}
+                        onChange={(e) => setUsername(e.target.value)}
+                        minLength="7"
+                        required
+                    />
+                </Form.Group>
 
-            <Form.Group controlId="formPassword">
-                <Form.Label>Password:</Form.Label>
-                <Form.Control
-                    type="password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    minLength="7"
-                    required
-                />
-            </Form.Group>
+                <Form.Group controlId="formPassword">
+                    <Form.Label>Password:</Form.Label>
+                    <Form.Control
+                        type="password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        minLength="7"
+                        required
+                    />
+                </Form.Group>
 
-            <Button variant="primary" type="submit">
-                Submit
-            </Button>
-        </Form>
+                <Button variant="primary" type="submit">
+                    Submit
+                </Button>
+            </Form>
+        </>
     );
 };
 
 
 
-//username: 167OLdP5BUfLZGxP
-//password: K39eKYhPMV9DDWhJ

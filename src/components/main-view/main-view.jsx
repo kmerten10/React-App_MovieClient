@@ -6,6 +6,9 @@ import { LoginView } from "../login-view/login-view";
 import { SignupView } from "../signup-view/signup-view";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { NavigationBar } from "../Nav-bar/nav.bar";
+import { ProfileView } from "../profile-view/profile-view";
 
 export const MainView = () => {
     const storedUser = JSON.parse(localStorage.getItem("user"));
@@ -14,7 +17,6 @@ export const MainView = () => {
     const [token, setToken] = useState(storedToken ? storedToken : null);
 
     const [movie, setMovie] = useState([]);
-    const [selectedMovie, setSelectedMovie] = useState(null);
 
     useEffect(() => {
         if (!token)
@@ -43,48 +45,130 @@ export const MainView = () => {
             });
     }, [token]);
     return (
-        <Row className="container">
-            <Row className="justify-content-md-center">
-                {!user ? (
-                    <Col md={5}>
-                        <LoginView
-                            onLoggedIn={(user, token) => {
-                                setUser(user);
-                                setToken(token);
-                            }}
+        <BrowserRouter>
+            <NavigationBar
+                user={user}
+                onLoggedOut={() => {
+                    setUser(null);
+                    setToken(null);
+                    localStorage.clear();
+                }}
+            />
+            <Row className="container">
+                <Row className="justify-content-md-center">
+                    <Routes>
+                        <Route
+                            path="/login"
+                            element={
+                                <>
+                                    {user ? (
+                                        <Navigate to="/movies" />
+                                    ) : (
+                                        <Col md={5}>
+                                            <LoginView
+                                                onLoggedIn={(user, token) => {
+                                                    setUser(user);
+                                                    setToken(token);
+                                                }}
+                                            />
+                                        </Col>
+                                    )}
+                                </>
+                            }
                         />
-                        or
-                        <SignupView />
-                    </Col>
 
-                ) : selectedMovie ? (
-                    <Col className="mb-5" md={8} >
-                        <MovieView movie={selectedMovie} onBackClick={() => setSelectedMovie(null)}
+                        <Route
+                            path="/signup"
+                            element={
+                                <>
+                                    {user ? (
+                                        <Navigate to="/movies" />
+                                    ) : (
+                                        <Col md={5}>
+                                            <SignupView />
+                                        </Col>
+                                    )}
+                                </>
+                            }
                         />
-                    </Col>
-                ) : movie.length === 0 ? (
-                    <div> The list is empty! </div>
-                ) : (
-                    <>
 
-                        <button onClick={() => { setUser(null); setToken(null); localStorage.clear(); }}>Logout</button>
-                        {movie.map((movie) => (
-                            <Col key={movie.id} md={3}>
-                                <MovieCard
-                                    movie={movie}
-                                    onClick={() => {
-                                        setSelectedMovie(movie);
-                                    }}
-                                />
-                            </Col>
-                        ))}
+                        <Route
+                            path="/movies"
+                            element={
+                                <>
+                                    {!user ? (
+                                        <Navigate to="/login" replace />
+                                    ) : movie.length === 0 ? (
+                                        <div> The list is empty! </div>
+                                    ) : (
+                                        <>
 
-                    </>
-                )
-                }
-            </Row >
-        </Row>
+                                            <button onClick={() => { setUser(null); setToken(null); localStorage.clear(); }}>Logout</button>
+                                            {movie.map((movie) => {
+                                                return (
+                                                    <Col md={2} key={movie}>
+                                                        <MovieCard
+                                                            movie={movie}
+
+                                                        />
+                                                    </Col>
+                                                )
+                                            })}
+                                        </>
+                                    )}
+                                </>
+                            }
+                        />
+
+                        <Route
+                            path="/movies/:movieid"
+                            element={
+                                <>
+                                    {!user ? (
+                                        <Navigate to="/login" replace />
+                                    ) : movie.length === 0 ? (
+                                        <div> The list is empty! </div>
+                                    ) : (
+                                        <>
+                                            <Col md={8}>
+                                                <MovieView
+                                                    movie={movie}
+                                                />
+                                            </Col>
+
+                                        </>
+                                    )}
+                                </>
+                            }
+                        />
+
+                        <Route
+                            path="/profile"
+                            element={
+                                <>
+                                    {!user ? (
+                                        <Navigate to="/login" replace />
+                                    ) : (
+                                        <>
+                                            <Col md={8}>
+                                                <ProfileView user={user}
+
+                                                />
+                                            </Col>
+
+                                        </>
+                                    )}
+                                </>
+                            }
+                        />
+
+
+                    </Routes>
+                </Row >
+            </Row>
+        </BrowserRouter>
     );
 };
+
 
 

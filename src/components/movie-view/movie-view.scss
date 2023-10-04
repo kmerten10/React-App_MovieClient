@@ -1,48 +1,73 @@
 $primary: Goldenrod;
-$body-bg: rgb(231, 183, 62);
+$body-bg: black;
 
 @import '~bootstrap/scss/bootstrap.scss';
 
 body{
-  background-image: url('/src/imgs/gold.jpg');
+  background-image: url('/src/imgs/stars.jpg');
   min-height: 100%;
   background-attachment: fixed;
   background-size: cover;
 }
-.back-button {
+
+.button .btn .btn-primary {
     padding: 4px 12px 4px 12px;
-    color: dimgray;
+    color: black;
     background-color: $primary;
-    border: 1px solid lightgray ;
+    border: none ;
     border-radius: 4px;
   }
 
+.card{
+  background-image: url('/src/imgs/stars3.jpg');
+
+}
   img {
-    width: 40%
-  }
+    width: 40%;
+    border-radius: 5px; 
+    z-index: 1;
+    opacity: 80%;  }
+
+  img:hover {
+    color: rgba(255, 255, 255, 1);
+    z-index: 0;
+    opacity: 100%; 
+   }
 
 .text{
   color: white;
   font-family:Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 18px;
+  text-decoration: none;
+}
+a{
+  text-decoration: none;
 }
 
-.h-100{
-  background-image: black;
-  padding: 20px;
-  padding-left: 30px;
-  padding-right: 30px;
-  transition: all .2s ease-in-out; 
+.col-md-2{
+  background-image: url('/src/imgs/stars3.jpg');
+  transition: all .2s ease-in-out;  
+  padding: 50px, 50px;
+  margin: 20px;
+  border-radius: 7%;
 }
 
-.h-100:hover{
+.col-md-2:hover{
     transition-timing-function: ease-in-out;
-    transform: scale(1.05); 
+    transform: scale(1.02); 
+    color: rgba(255, 255, 255, 1);
+    box-shadow: 0 3px 20px  rgba(102, 124, 174, 0.4); 
 }
 
-.col-md-3{
-  padding: 20px;
-}
 
 .container{
-  background-color:  rgb(56, 47, 47);
+  background-color: black;
+}
+
+.form-label{
+  color: white
+}
+
+.col-md-5{
+  color: white;
 }
