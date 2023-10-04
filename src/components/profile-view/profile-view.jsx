@@ -94,7 +94,7 @@ export const ProfileView = ({ user, token, movies, setUser }) => {
                             <Card>
                                 <Card.Body>
                                     <Card.Title>My Profile</Card.Title>
-                                    <Card.Text>Want to make changes to your profie?</Card.Text>
+                                    <Card.Text>Want to make changes to your profile?</Card.Text>
                                     <Form onSubmit={handleUpdate}>
 
                                         <Form.Group>
