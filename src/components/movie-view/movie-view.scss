@@ -9,7 +9,8 @@ body{
   background-attachment: fixed;
   background-size: cover;
 }
-.back-button {
+
+.button .btn .btn-primary {
     padding: 4px 12px 4px 12px;
     color: black;
     background-color: $primary;
@@ -17,7 +18,10 @@ body{
     border-radius: 4px;
   }
 
+.card{
+  background-image: url('/src/imgs/stars3.jpg');
 
+}
   img {
     width: 40%;
     border-radius: 5px; 
@@ -33,28 +37,37 @@ body{
 .text{
   color: white;
   font-family:Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 18px;
+  text-decoration: none;
+}
+a{
+  text-decoration: none;
 }
 
-.h-100{
+.col-md-2{
   background-image: url('/src/imgs/stars3.jpg');
-  padding-top: 30px;
-  padding-left: 30px;
-  padding-right: 30px;
-  transition: all .2s ease-in-out; 
+  transition: all .2s ease-in-out;  
+  padding: 50px, 50px;
+  margin: 20px;
+  border-radius: 7%;
 }
 
-.h-100:hover{
+.col-md-2:hover{
     transition-timing-function: ease-in-out;
     transform: scale(1.02); 
     color: rgba(255, 255, 255, 1);
-    box-shadow: 0 3px 20px  rgba(144, 102, 174, 0.4); 
+    box-shadow: 0 3px 20px  rgba(102, 124, 174, 0.4); 
 }
 
-.col-md-3{
-  padding: 20px;
-}
 
 .container{
   background-color: black;
 }
 
+.form-label{
+  color: white
+}
+
+.col-md-5{
+  color: white;
+}

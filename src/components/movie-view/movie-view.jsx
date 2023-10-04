@@ -1,42 +1,44 @@
 import { useParams } from "react-router";
+import propTypes from "prop-types";
 import { Link } from "react-router-dom";
 import './movie-view.scss';
 
-export const MovieView = ({ movie, onBackClick }) => {
-    const { movieId } = useParams();
 
-    const movies = movies.find((b) => b.id === movieId);
+export const MovieView = ({ movie }) => {
+    const { movieid } = useParams();
+
+
+    const movies = movie.find((m) => m._id === movieid);
 
     return (
         <div>
 
-            <Link to={`/movies`}>
-                <button onClick={onBackClick}
-                    className="back-button"
-                    style={{ cursor: "pointer" }}
-                >Back</button>
-            </Link>
-
             <div className='text'>
                 <div>
-                    <span>{movie.Title}</span>
+                    <span>{movies.Title}</span>
                 </div>
 
                 <div>
-                    <img src={movie.Image} />
+                    <img src={movies.Image} />
                 </div>
 
                 <div>
 
-                    <span>{movie.Genre.Name}</span>
+                    <span>{movies.Genre.Name}</span>
                 </div>
                 <div>
-                    <span>{movie.Description}</span>
+                    <span>{movies.Description}</span>
                 </div>
                 <div>
                     <span>Director: </span>
-                    <span>{movie.Director.Name}</span>
+                    <span>{movies.Director.Name}</span>
                 </div>
+                <Link to={`/movies`}>
+                    <button
+                        className="button"
+                        style={{ cursor: "pointer" }}
+                    >Back</button>
+                </Link>
 
             </div>
         </div>
