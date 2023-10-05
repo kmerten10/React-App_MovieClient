@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { Form, Button, Card, CardGroup, Col, Container, Form, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import MovieCard from "../main-view/movie-card";
+import { MovieCard } from "../main-view/movie-card";
 
 export const ProfileView = ({ user, token, movie, setUser }) => {
 
@@ -180,7 +180,7 @@ export const ProfileView = ({ user, token, movie, setUser }) => {
                 <Row>
                     {result.map((movie) => {
                         return (
-                            <Col key={movie._id}
+                            <Col md={3} key={movie._id}
                             >
                                 <MovieCard
                                     movie={movie}

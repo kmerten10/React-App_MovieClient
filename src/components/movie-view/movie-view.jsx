@@ -2,6 +2,7 @@ import { useParams } from "react-router";
 import propTypes from "prop-types";
 import { Link } from "react-router-dom";
 import './movie-view.scss';
+import { Container, Card, Col } from "react-bootstrap";
 
 
 export const MovieView = ({ movie }) => {
@@ -11,36 +12,34 @@ export const MovieView = ({ movie }) => {
     const movies = movie.find((m) => m._id === movieid);
 
     return (
-        <div>
-
-            <div className='text'>
-                <div>
+        <Container>
+            <Col key={movie} ClassName="text" >
+                <Card.Text>
                     <span>{movies.Title}</span>
-                </div>
+                </Card.Text>
+            </Col>
+            <Card.Img src={movies.Image} />
 
-                <div>
-                    <img src={movies.Image} />
-                </div>
-
-                <div>
+            <Col>
+                <Card.Text>
 
                     <span>{movies.Genre.Name}</span>
-                </div>
-                <div>
+                </Card.Text >
+                <Card.Text>
                     <span>{movies.Description}</span>
-                </div>
-                <div>
+                </Card.Text >
+                <Card.Text>
                     <span>Director: </span>
                     <span>{movies.Director.Name}</span>
-                </div>
+                </Card.Text >
                 <Link to={`/movies`}>
                     <button
                         className="button"
                         style={{ cursor: "pointer" }}
                     >Back</button>
                 </Link>
+            </Col>
 
-            </div>
-        </div>
+        </Container >
     );
 };
