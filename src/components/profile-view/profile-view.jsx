@@ -4,14 +4,14 @@ import { Form, Button, Card, CardGroup, Col, Container, Form, Row } from "react-
 import { Link } from "react-router-dom";
 import MovieCard from "../main-view/movie-card";
 
-export const ProfileView = ({ user, token, movies, setUser }) => {
+export const ProfileView = ({ user, token, movie, setUser }) => {
 
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [email, setEmail] = useState('');
     const [birth_date, setBirthday] = useState('');
 
-    // let result = movies.filter((m) => user.favoriteMovies.includes(m._id));
+    let result = movie.filter((m) => user.favoriteMovies.includes(m._id));
 
     const handleUpdate = (event) => {
         event.preventDefault();
@@ -94,7 +94,7 @@ export const ProfileView = ({ user, token, movies, setUser }) => {
                             <Card>
                                 <Card.Body>
                                     <Card.Title>My Profile</Card.Title>
-                                    <Card.Text>Want to make changes to your profie?</Card.Text>
+                                    <Card.Text>Want to make changes to your profile?</Card.Text>
                                     <Form onSubmit={handleUpdate}>
 
                                         <Form.Group>
@@ -176,7 +176,7 @@ export const ProfileView = ({ user, token, movies, setUser }) => {
                 </Row>
             </Container>
 
-            {/* <Container>
+            <Container>
                 <Row>
                     {result.map((movie) => {
                         return (
@@ -192,7 +192,7 @@ export const ProfileView = ({ user, token, movies, setUser }) => {
                         );
                     })}
                 </Row>
-            </Container> */}
+            </Container>
         </>
     );
 }

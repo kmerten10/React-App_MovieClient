@@ -109,6 +109,9 @@ export const MainView = () => {
                                                     <Col md={2} key={movie}>
                                                         <MovieCard
                                                             movie={movie}
+                                                            user={user}
+                                                            setUser={setUser}
+                                                            token={token}
 
                                                         />
                                                     </Col>
@@ -133,7 +136,9 @@ export const MainView = () => {
                                             <Col md={8}>
                                                 <MovieView
                                                     movie={movie}
-                                                />
+                                                    user={user}
+                                                    setUser={setUser}
+                                                    token={token} />
                                             </Col>
 
                                         </>
@@ -151,7 +156,11 @@ export const MainView = () => {
                                     ) : (
                                         <>
                                             <Col md={8}>
-                                                <ProfileView user={user}
+                                                <ProfileView
+                                                    movie={movie}
+                                                    user={user}
+                                                    setUser={setUser}
+                                                    token={token}
 
                                                 />
                                             </Col>

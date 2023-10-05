@@ -9,21 +9,21 @@ import { useEffect, useState } from "react";
 export const MovieCard = ({ movie, token, user, setUser }) => {
     const [isFavorite, setIsFavorite] = useState(false);
 
-    MovieCard.propTypes = {
-        movie: propTypes.shape({
-            Title: propTypes.string.isRequired,
-            Director: propTypes.shape({ Name: propTypes.string.isRequired }),
-            Image: propTypes.string.isRequired
-        }).isRequired
-    }
+    // MovieCard.propTypes = {
+    //     movie: propTypes.shape({
+    //         Title: propTypes.string.isRequired,
+    //         Director: propTypes.shape({ Name: propTypes.string.isRequired }),
+    //         Image: propTypes.string.isRequired,
+    //     }).isRequired
+    // }
 
-    MovieCard.propTypes = {
-        user: propTypes.shape({
-            username: propTypes.string.isRequired,
-            password: propTypes.string.isRequired,
-            favoriteMovies: propTypes.array.isRequired
-        }).isRequired
-    }
+    // MovieCard.propTypes = {
+    //     user: propTypes.shape({
+    //         username: propTypes.string.isRequired,
+    //         password: propTypes.string.isRequired,
+    //         favoriteMovies: propTypes.array.isRequired,
+    //     }).isRequired
+    // }
 
     useEffect(() => {
         console.log(user);
@@ -80,9 +80,9 @@ export const MovieCard = ({ movie, token, user, setUser }) => {
                 console.log("isFavorite", isFavorite);
 
                 if (user) {
-                    console.log("user = ture");
+                    console.log("user = true");
 
-                    locatlStorage.setItem("user", JSON.stringify(user));
+                    localStorage.setItem("user", JSON.stringify(user));
                     setUser(user);
                     setIsFavorite(false);
                     console.log("isFavorite set to false:", isFavorite);
@@ -100,7 +100,7 @@ export const MovieCard = ({ movie, token, user, setUser }) => {
             <Container>
                 <Card>
                     <Card.Body>
-                        <Link to={`/ movies / ${encodeURIComponent(movie._id)
+                        <Link to={`/movies/${encodeURIComponent(movie._id)
                             }`}>
 
                             <Card.Img variant="top" src={movie.Image} />
