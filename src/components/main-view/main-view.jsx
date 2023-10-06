@@ -17,6 +17,8 @@ export const MainView = () => {
     const [token, setToken] = useState(storedToken ? storedToken : null);
 
     const [movie, setMovie] = useState([]);
+    const [search, setSearch] = useState("");
+    const [filteredMovies, setFilteredMovies] = useState([]);
 
     useEffect(() => {
         if (!token)
@@ -44,10 +46,25 @@ export const MainView = () => {
                 setMovie(moviesFromApi);
             });
     }, [token]);
+
+    const getSearchedMovies = (arr, query) => {
+        return arr.filter((movie) => {
+            return movie.Title.toLowerCase().includes(query.toLowerCase());
+        });
+    };
+    console.log(getSearchedMovies(movie, search));
+
+    useEffect(() => {
+        setFilteredMovies(getSearchedMovies(movie, search));
+    }, [search, movie]);
+
     return (
         <BrowserRouter>
             <NavigationBar
                 user={user}
+                movie={movie}
+                search={search}
+                setSearch={setSearch}
                 onLoggedOut={() => {
                     setUser(null);
                     setToken(null);
@@ -104,7 +121,7 @@ export const MainView = () => {
                                         <>
 
                                             <button onClick={() => { setUser(null); setToken(null); localStorage.clear(); }}>Logout</button>
-                                            {movie.map((movie) => {
+                                            {filteredMovies.map((movie) => {
                                                 return (
                                                     <Col md={2} key={movie._id}>
                                                         <MovieCard
