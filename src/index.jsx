@@ -1,4 +1,6 @@
 import { createRoot } from "react-dom/client";
+import { useNavigate } from "react-router-dom";
+
 import Container from "react-bootstrap/Container";
 
 import { MainView } from "./components/main-view/main-view";
@@ -10,7 +12,8 @@ import "./index.scss";
 const MyFlixApplication = () => {
     return (
         <Container>
-            <MainView />
+            <MainView
+            />
         </Container>
     );
 };
