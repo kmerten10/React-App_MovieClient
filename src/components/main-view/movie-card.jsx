@@ -98,59 +98,57 @@ export const MovieCard = ({ movie, token, user, setUser }) => {
             key={movie._id}
         >
             <Container>
-                <Card>
-                    <Card.Body>
-                        <Link to={`/movies/${encodeURIComponent(movie._id)
-                            }`}>
+                <Card.Body>
+                    <Link to={`/movies/${encodeURIComponent(movie._id)
+                        }`}>
 
-                            <Card.Img variant="top" src={movie.Image} />
-                            <span className="text">
-                                <Card.Title className="text">{movie.Title}</Card.Title></span>
-                            {/* <Card.Text className="text">{movie.Director.Name}</Card.Text> */}
-                        </Link>
-                        <Col>
-                            {isFavorite ? (
-                                <Button
-                                    variant="link"
-                                    onClick={removeFavoriteMovie}
+                        <Card.Img variant="top" src={movie.Image} />
+                        <span className="text">
+                            <Card.Title className="text">{movie.Title}</Card.Title></span>
+                        {/* <Card.Text className="text">{movie.Director.Name}</Card.Text> */}
+                    </Link>
+                    <Col>
+                        {isFavorite ? (
+                            <Button
+                                variant="link"
+                                onClick={removeFavoriteMovie}
+                            >
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="32"
+                                    height="32"
+                                    fill="red"
+                                    class="bi bi-heart-fill"
+                                    viewBox="0 0 16 16"
                                 >
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width="32"
-                                        height="32"
-                                        fill="red"
-                                        class="bi bi-heart-fill"
-                                        viewBox="0 0 16 16"
-                                    >
-                                        <path
-                                            fillRule="evenodd"
-                                            d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"
-                                        />
-                                    </svg>
-                                </Button>
-                            ) : (
-                                <Button
-                                    variant="link"
-                                    onClick={addFavoriteMovie}
+                                    <path
+                                        fill-rule="evenodd"
+                                        d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"
+                                    />
+                                </svg>
+                            </Button>
+                        ) : (
+                            <Button
+                                variant="link"
+                                onClick={addFavoriteMovie}
+                            >
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="32"
+                                    height="32"
+                                    fill="red"
+                                    class="bi bi-heart-fill"
+                                    viewBox="0 0 16 16"
                                 >
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width="32"
-                                        height="32"
-                                        fill="red"
-                                        class="bi bi-heart-fill"
-                                        viewBox="0 0 16 16"
-                                    >
-                                        <path
-                                            fill-rule="evenodd"
-                                            d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"
-                                        />
-                                    </svg>
-                                </Button>
-                            )}
-                        </Col >
-                    </Card.Body >
-                </Card>
+                                    <path
+                                        fill-rule="evenodd"
+                                        d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"
+                                    />
+                                </svg>
+                            </Button>
+                        )}
+                    </Col >
+                </Card.Body >
             </Container>
         </Col>
     );
