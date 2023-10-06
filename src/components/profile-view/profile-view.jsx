@@ -6,10 +6,10 @@ import { MovieCard } from "../main-view/movie-card";
 
 export const ProfileView = ({ user, token, movie, setUser }) => {
 
-    const [username, setUsername] = useState('');
-    const [password, setPassword] = useState('');
-    const [email, setEmail] = useState('');
-    const [birth_date, setBirthday] = useState('');
+    const [username, setUsername] = useState(user.username);
+    const [password, setPassword] = useState(user.password);
+    const [email, setEmail] = useState(user.email);
+    const [birth_date, setBirthday] = useState(user.birth_date);
 
     let result = movie.filter((m) => user.favoriteMovies.includes(m._id));
 
@@ -25,7 +25,7 @@ export const ProfileView = ({ user, token, movie, setUser }) => {
 
 
         fetch(
-            `https://my-flix-app-66e818e7b7de.herokuapp.com/users/{$user.username}`,
+            `https://my-flix-app-66e818e7b7de.herokuapp.com/users/${user.username}`,
             {
                 method: "PUT",
                 headers: {
@@ -38,7 +38,7 @@ export const ProfileView = ({ user, token, movie, setUser }) => {
             .then(async (response) => {
                 console.log("response:", response);
                 if (response.ok) {
-                    addListener("update successful");
+                    alert("update successful");
                     const data = await response.json();
                     localStorage.setItem("user", JSON.stringify(data));
                     window.location.reload();
@@ -62,7 +62,7 @@ export const ProfileView = ({ user, token, movie, setUser }) => {
         };
 
         fetch(
-            `https://my-flix-app-66e818e7b7de.herokuapp.com/users/{$user.username}`,
+            `https://my-flix-app-66e818e7b7de.herokuapp.com/users/${user.username}`,
             {
                 method: "DELETE",
                 headers: {
