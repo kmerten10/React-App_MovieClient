@@ -60,6 +60,7 @@ export const MainView = () => {
 
     return (
         <BrowserRouter>
+            <Navigate to="/login" />
             <NavigationBar
                 user={user}
                 movie={movie}
