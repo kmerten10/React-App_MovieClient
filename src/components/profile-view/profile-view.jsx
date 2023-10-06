@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { Form, Button, Card, CardGroup, Col, Container, Form, Row } from "react-bootstrap";
+import { Form, Button, Card, CardGroup, Col, Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { MovieCard } from "../main-view/movie-card";
 
