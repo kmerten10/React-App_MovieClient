@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { MainView } from "../main-view/main-view";
 import './nav-bar.scss'
 
-export const NavigationBar = ({ user, onLoggedOut, search, movies, setSearch }) => {
+export const NavigationBar = ({ user, onLoggedOut, setSearch }) => {
     return (
         <Navbar className="nav-bar" expand="lg">
             <Container>
