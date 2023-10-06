@@ -19,14 +19,17 @@ body{
   }
 
 .card{
-  background-image: url('/src/imgs/stars3.jpg');
-
+  background-color: none;
 }
-  img {
-    width: 40%;
-    border-radius: 5px; 
-    z-index: 1;
-    opacity: 80%;  }
+
+img.card-img {
+  height: 400px;
+  width: auto;
+border-radius: 5px; 
+  z-index: 1;
+  opacity: 80%; 
+}
+
 
   img:hover {
     color: rgba(255, 255, 255, 1);

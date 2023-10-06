@@ -106,9 +106,12 @@ export const MainView = () => {
                                             <button onClick={() => { setUser(null); setToken(null); localStorage.clear(); }}>Logout</button>
                                             {movie.map((movie) => {
                                                 return (
-                                                    <Col md={2} key={movie}>
+                                                    <Col md={2} key={movie._id}>
                                                         <MovieCard
                                                             movie={movie}
+                                                            user={user}
+                                                            setUser={setUser}
+                                                            token={token}
 
                                                         />
                                                     </Col>
@@ -130,10 +133,12 @@ export const MainView = () => {
                                         <div> The list is empty! </div>
                                     ) : (
                                         <>
-                                            <Col md={8}>
+                                            <Col >
                                                 <MovieView
                                                     movie={movie}
-                                                />
+                                                    user={user}
+                                                    setUser={setUser}
+                                                    token={token} />
                                             </Col>
 
                                         </>
@@ -151,7 +156,11 @@ export const MainView = () => {
                                     ) : (
                                         <>
                                             <Col md={8}>
-                                                <ProfileView user={user}
+                                                <ProfileView
+                                                    movie={movie}
+                                                    user={user}
+                                                    setUser={setUser}
+                                                    token={token}
 
                                                 />
                                             </Col>
