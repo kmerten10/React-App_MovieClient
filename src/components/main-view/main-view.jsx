@@ -60,7 +60,6 @@ export const MainView = () => {
 
     return (
         <BrowserRouter>
-            <Navigate to="/login" />
             <NavigationBar
                 user={user}
                 movie={movie}
@@ -75,6 +74,12 @@ export const MainView = () => {
             <Row className="container">
                 <Row className="justify-content-md-center">
                     <Routes>
+                        <Route
+                            path="/"
+                            element={
+                                <LoginView></LoginView>
+                            }
+                        ></Route>
                         <Route
                             path="/login"
                             element={
