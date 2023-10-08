@@ -77,9 +77,24 @@ export const MainView = () => {
                         <Route
                             path="/"
                             element={
-                                <LoginView></LoginView>
+                                <>
+                                    {user ? (
+                                        <Navigate to="/movies" />
+                                    ) : (
+                                        <Col md={5}>
+                                            <LoginView
+                                                onLoggedIn={(user, token) => {
+                                                    setUser(user);
+                                                    setToken(token);
+                                                }}
+                                            />
+                                        </Col>
+                                    )
+
+                                    }
+                                </>
                             }
-                        ></Route>
+                        />
                         <Route
                             path="/login"
                             element={
@@ -126,7 +141,6 @@ export const MainView = () => {
                                     ) : (
                                         <>
 
-                                            <button onClick={() => { setUser(null); setToken(null); localStorage.clear(); }}>Logout</button>
                                             {filteredMovies.map((movie) => {
                                                 return (
                                                     <Col md={2} key={movie._id}>
@@ -197,8 +211,8 @@ export const MainView = () => {
 
                     </Routes>
                 </Row >
-            </Row>
-        </BrowserRouter>
+            </Row >
+        </BrowserRouter >
     );
 };
 
