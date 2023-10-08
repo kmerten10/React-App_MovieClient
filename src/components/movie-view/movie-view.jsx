@@ -12,7 +12,7 @@ export const MovieView = ({ movie }) => {
     const movies = movie.find((m) => m._id === movieid);
 
     return (
-        <Container>
+        <Container className="movieview-text">
             <Col key={movie} ClassName="text" >
                 <Card.Text>
                     <span>{movies.Title}</span>

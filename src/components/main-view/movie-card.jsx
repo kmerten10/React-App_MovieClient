@@ -17,7 +17,7 @@ export const MovieCard = ({ movie, token, user, setUser }) => {
     //     }).isRequired
     // }
 
-    // MovieCard.propTypes = {
+    // MovieCard.propTypes = { 
     //     user: propTypes.shape({
     //         username: propTypes.string.isRequired,
     //         password: propTypes.string.isRequired,
@@ -115,9 +115,10 @@ export const MovieCard = ({ movie, token, user, setUser }) => {
                             >
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
-                                    width="32"
-                                    height="32"
+                                    width="24"
+                                    height="24"
                                     fill="red"
+                                    stroke="red"
                                     class="bi bi-heart-fill"
                                     viewBox="0 0 16 16"
                                 >
@@ -134,9 +135,10 @@ export const MovieCard = ({ movie, token, user, setUser }) => {
                             >
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
-                                    width="32"
-                                    height="32"
-                                    fill="red"
+                                    width="24"
+                                    height="24"
+                                    fill="black"
+                                    stroke="red"
                                     class="bi bi-heart-fill"
                                     viewBox="0 0 16 16"
                                 >
