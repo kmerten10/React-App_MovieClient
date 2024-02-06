@@ -34,7 +34,7 @@ export const MovieCard = ({ movie, token, user, setUser }) => {
 
     const addFavoriteMovie = () => {
         console.log("Called addfavmovies");
-        fetch(`https://my-flix-app-66e818e7b7de.herokuapp.com/users/${user.username}/movies/${movie._id}`,
+        fetch(`http://18.205.247.183/users/${user.username}/movies/${movie._id}`,
             { method: "POST", headers: { Authorization: `Bearer ${token}` } })
             .then((response) => {
                 if (response.ok) {
@@ -61,7 +61,7 @@ export const MovieCard = ({ movie, token, user, setUser }) => {
         console.log("called removefavmovies");
 
         fetch(
-            `https://my-flix-app-66e818e7b7de.herokuapp.com/users/${user.username}/movies/${movie._id}`,
+            `http://18.205.247.183/users/${user.username}/movies/${movie._id}`,
             { method: "DELETE", headers: { Authorization: `Bearer ${token}` } }
         )
             .then((response) => {

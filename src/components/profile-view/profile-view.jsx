@@ -25,7 +25,7 @@ export const ProfileView = ({ user, token, movie, setUser }) => {
 
 
         fetch(
-            `https://my-flix-app-66e818e7b7de.herokuapp.com/users/${user.username}`,
+            `http://18.205.247.183/users/${user.username}`,
             {
                 method: "PUT",
                 headers: {
@@ -62,7 +62,7 @@ export const ProfileView = ({ user, token, movie, setUser }) => {
         };
 
         fetch(
-            `https://my-flix-app-66e818e7b7de.herokuapp.com/users/${user.username}`,
+            `http://18.205.247.183/users/${user.username}`,
             {
                 method: "DELETE",
                 headers: {
